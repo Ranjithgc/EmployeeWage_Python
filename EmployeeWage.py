@@ -1,3 +1,4 @@
+
 """
 @Author: Ranjith G C
 @Date: 2021-06-27
@@ -6,46 +7,52 @@
 @Title: Employee Wage Computation Program
 """
 import random
+#constants
+WORKING_DAYS = 20
 
-# constants
-PRESENT = 1
-PART_PRESENT = 2
+print("Wellcome to employee wage computation")
 
-print("Welcome to Employee Wage Computation problem")
-
-#Uc4: Refactored code using switcher
-
-def employee_attendance():
+def calculateHour(attendance):
     """
     Description:
-        This function will calculate Daily Employee Wage Using Switcher
+        this function determine the work hours
+    Parameter:
+        attendance is used to determine work hour of employee
+    Return:
+        the functution return 8 or 4 or 0 value as work hour
     """
-    
-    wage_per_hr = 20
-
-    emp_Check = random.randint(0,2)
-    if emp_Check == PRESENT:
-        print("Employee is present")
-        wrk_Hr = 8
-    elif emp_Check == PART_PRESENT:
-        print("Employee is part present")
-        wrk_Hr = 4
+    if attendance == isFullTime:
+        work_Hour = 8
+    elif attendance == isPartTime:
+        work_Hour = 4 
     else:
-        print("Employee is absent")
-        wrk_Hr = 0
-    employee_Wage = wage_per_hr * wrk_Hr 
-    print("Employee Wage is - ", employee_Wage)
+        work_Hour = 0
+    return work_Hour
+
+def calculateWage():
+    """
+    Description:
+        this function calculate employee wage
+    Return:
+        this function return total employee wage of a month
+    """
+    wage_Per_Hour = 20
+    total_Wage = 0
+    for day in range(WORKING_DAYS):
+        attendance = random.randint(0,2)
+        attendanceStatus = switcher.get(attendance)
+        working_Hours = calculateHour(attendanceStatus)
+        total_Wage += working_Hours * wage_Per_Hour
+    return total_Wage
 
 absent = 0
-fullPresent = 1
-part_present = 2
+isFullTime = 1
+isPartTime = 2
 
 switcher = {
     0: absent,
-    1: fullPresent,
-    2: part_present
+    1: isFullTime,
+    2: isPartTime,
 }
 
-emp_Check = random.randint(0,2)
-attendance = switcher.get(emp_Check)
-employee_attendance()
+print("Total employee wage for month is:",calculateWage())

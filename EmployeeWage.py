@@ -1,3 +1,4 @@
+
 """
 @Author: Ranjith G C
 @Date: 2021-06-27
@@ -30,5 +31,5 @@ def employee_attendance():
         wrk_Hr = 0
     employee_Wage = wage_per_hr * wrk_Hr 
     print("Employee Wage is - ", employee_Wage)
-
+    
 employee_attendance()

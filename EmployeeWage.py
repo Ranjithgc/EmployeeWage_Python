@@ -9,16 +9,16 @@ import random
 
 print("Welcome to Employee Wage Computation problem")
 
-#Uc2: Calculating Daily Employee Wage
-
+#Uc1:
+#Uc2:
 def employee_attendance():
     """
     Description:
-        This function will calculate Daily Employee Wage
+        This function will check if employee is present or absent
     """
-    # constants
+    #constants
     PRESENT = 1
-    # instance variable
+    
     wage_per_hr = 20
 
     emp_Check = random.randint(0,2)

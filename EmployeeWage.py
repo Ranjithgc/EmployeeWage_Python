@@ -1,4 +1,3 @@
-
 """
 @Author: Ranjith G C
 @Date: 2021-06-27
@@ -7,8 +6,6 @@
 @Title: Employee Wage Computation Program
 """
 import random
-#constants
-WORKING_DAYS = 20
 
 print("Wellcome to employee wage computation")
 
@@ -37,12 +34,18 @@ def calculateWage():
         this function return total employee wage of a month
     """
     wage_Per_Hour = 20
+    working_Days = 0
+    total_Working_Hours = 0
+    maximum_Working_Days = 20
+    maximum_Working_Hours = 100
     total_Wage = 0
-    for day in range(WORKING_DAYS):
+    while working_Days < maximum_Working_Days and total_Working_Hours < maximum_Working_Hours:
         attendance = random.randint(0,2)
         attendanceStatus = switcher.get(attendance)
         working_Hours = calculateHour(attendanceStatus)
         total_Wage += working_Hours * wage_Per_Hour
+        total_Working_Hours += working_Hours
+        working_Days += 1
     return total_Wage
 
 absent = 0

@@ -14,7 +14,7 @@ PART_PRESENT = 2
 
 print("Welcome to Employee Wage Computation problem")
 
-#Uc2: Calculate Daily Employee Wage
+#Uc3: Calculate Daily Employee Wage
 
 def employee_attendance():
     """

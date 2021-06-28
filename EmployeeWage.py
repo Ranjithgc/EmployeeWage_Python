@@ -40,7 +40,7 @@ def calculateWage():
     Return:
         this function return total employee wage of a month
     """
-    wageList = []
+    wage_Dict = {}
     wage_Per_Hour = 20
     working_Days = 0
     total_Working_Hours = 0
@@ -48,16 +48,20 @@ def calculateWage():
     maximum_Working_Hours = 100
     total_Wage = 0
     while working_Days < maximum_Working_Days and total_Working_Hours < maximum_Working_Hours:
+        print("Day - "+ str(days+1))
         attendance = random.randint(0,2)
         attendanceStatus = switcher.get(attendance)
         working_Hours = calculateHour(attendanceStatus)
         daily_Wage = working_Hours * wage_Per_Hour
-        wageList.append(daily_Wage)
         total_Wage += working_Hours * wage_Per_Hour
         total_Working_Hours += working_Hours
+        wage_Dict["Day "+str(days+1)] = {
+            "daily_wage" : daily_Wage,
+            "total_wage" : total_Wage
+        }
         working_Days += 1
     getWorkHours(total_Working_Hours)
-    print("Daily Wage - ", wageList)
+    print("Daily Wage - ", wage_Dict)
     return total_Wage
 
 absent = 0

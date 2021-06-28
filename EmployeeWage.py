@@ -7,6 +7,10 @@
 """
 import random
 
+# constants
+PRESENT = 1
+PART_PRESENT = 2
+
 print("Welcome to Employee Wage Computation problem")
 
 #Uc2: Calculate Daily Employee Wage
@@ -16,8 +20,6 @@ def employee_attendance():
     Description:
         This function will check if employee is present or absent
     """
-    #constants
-    PRESENT = 1
     
     wage_per_hr = 20
 
@@ -25,6 +27,9 @@ def employee_attendance():
     if emp_Check == PRESENT:
         print("Employee is present")
         wrk_Hr = 8
+    elif emp_Check == PART_PRESENT:
+        print("Employee is part present")
+        wrk_Hr = 4
     else:
         print("Employee is absent")
         wrk_Hr = 0

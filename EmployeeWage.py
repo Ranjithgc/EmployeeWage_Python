@@ -9,8 +9,8 @@ import random
 
 print("Welcome to Employee Wage Computation problem")
 
-#Uc1:
-#Uc2:
+#Uc2: Calculate Daily Employee Wage
+
 def employee_attendance():
     """
     Description:
